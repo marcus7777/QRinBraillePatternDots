@@ -1,7 +1,7 @@
 {
-  "name": "QR in Braille Pattern Dots",
+  "name": "QRinBraillePatternDots",
   "version": "1.0.0",
-  "main": "⠍.vue",
+  "main": "QRinBraillePatternDots.vue",
   "license": "MIT",
   "private": false,
   "dependencies": {
