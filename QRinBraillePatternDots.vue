@@ -1,5 +1,5 @@
 <template>
-  <div style="line-height: 1; font-weight: bolder; letter-spacing: -3px; color: #000; text-shadow: 0 0 3px #000; background: #fff; white-space: pre-wrap; outline: black 1px; -webkit-text-stroke-color: black; -webkit-text-stroke: .07em">{{code}}</div>
+  <div style="display: inline-block;line-height: 1;font-weight:bolder;letter-spacing:-3px;color:#000;text-shadow:0 0 3px #000;background:#fff;white-space:pre-wrap;outline:black 1px;-webkit-text-stroke-color: black;-webkit-text-stroke:.07em">{{code}}</div>
 </template>
 <script>
   import qr from 'qr.js'
@@ -11,11 +11,11 @@
       code(){
         const qrcode = qr(this.value)
         const cells = qrcode.modules
-        const space = "\n "
-        let cliQr = " "
+        const space = "   \n   "
+        let cliQr = space
         for (let r = 0; r < cells.length; r+=4 ) {
           for (let c = 0; c < cells[0].length; c+=2 ) {
-            let numBlock = 10240
+            let numBlock = 10240                              // blank and start
             if (cells[r][c])                   numBlock += 1  // 1
             if (cells[r+1] && cells[r+1][c])   numBlock += 2  // 2   
             if (cells[r+2] && cells[r+2][c])   numBlock += 4  // 3    1 4
