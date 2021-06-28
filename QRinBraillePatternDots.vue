@@ -6,10 +6,14 @@
   export default {
     props: {
       value: String,
+      level: {
+        type: Number,
+        default: 1,
+      },
     },
     computed: {
       code(){
-        const qrcode = qr(this.value)
+        const qrcode = qr(this.value, { errorCorrectLevel: this.level })
         const cells = qrcode.modules
         const space = "   \n   "
         let cliQr = space
