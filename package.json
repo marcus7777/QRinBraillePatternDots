@@ -1,9 +1,13 @@
 {
   "name": "qr-braille",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "QRinBraillePatternDots.vue",
   "license": "MIT",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:marcus7777/QRinBraillePatternDots.git"
+  },
   "dependencies": {
     "qr.js": "^0.0.0"
   }
