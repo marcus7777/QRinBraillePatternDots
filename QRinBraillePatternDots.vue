@@ -1,5 +1,6 @@
 <template>
-  <div style="display:inline-block;line-height:1;font-weight:bolder;letter-spacing:-3px;text-shadow:0 0 3px;white-space:pre;outline:black 1px;-webkit-text-stroke-color: black;-webkit-text-stroke:.1em">{{code}}</div>
+  <div v-if="!bigger" @click="bigger = !bigger" style="display:inline-block;line-height:1;font-weight:bolder;letter-spacing:-.27em;text-shadow:0 0 3px;white-space:pre;outline:black 1px;-webkit-text-stroke-color: black;-webkit-text-stroke:.1em">{{code}}</div>
+  <div v-else @click="bigger = !bigger" style="display: inline-block; line-height: 1; font-weight: bolder; letter-spacing: -0.17em; text-shadow: 0px 0px 3px; white-space: pre; outline: black 12px; -webkit-text-stroke: 0.13em; color: #000f; background: #ffff; z-index: 1000; inset: 0px; border: 2px black; position: absolute; width: 100vw; height: 100vw; font-size: calc((8vh + 8vw)/3); min-width: 100vw; text-align: left;">{{code}}</div>
 </template>
 <script>
   import qr from 'qr.js'
@@ -8,7 +9,7 @@
       value: String,
       level: {
         type: Number,
-        default: 1,
+        default: 0,
       },
     },
     computed: {
@@ -34,6 +35,11 @@
         }        
         return cliQr
       }
-    }
+    },
+    data() {
+      return {
+        bigger: false,
+      }
+    },
   }
 </script>
